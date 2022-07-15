@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "ToDo List";
+}
+
+<div class="main">
+    <div class="text-end">
+        <button><i class="bi bi-plus-square"></i> Add</button>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Importance</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(var obj in Model.ToDoElements)
+            {
+                <tr>
+                    <td>@obj.Name</td>
+                    <td>@obj.ImportanceLevel</td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
