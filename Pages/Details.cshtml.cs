@@ -7,7 +7,7 @@ namespace ToDoWebApp.Pages
     public class DetailsModel : PageModel
     {
         private readonly AppDbContext _dbContext;
-        public ToDoTable table { get; set; }
+        public ToDoTable Table { get; set; }
 
         public DetailsModel(AppDbContext dbContext)
         {
@@ -15,7 +15,7 @@ namespace ToDoWebApp.Pages
         }
         public void OnGet(int id)
         {
-            table = _dbContext.ToDoTable.Find(id);
+            Table = _dbContext.ToDoTable.Find(id);
         }
     }
 }

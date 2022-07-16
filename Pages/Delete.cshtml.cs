@@ -4,13 +4,12 @@ using ToDoWebApp.Entities;
 
 namespace ToDoWebApp.Pages
 {
-    public class EditModel : PageModel
+    public class DeleteModel : PageModel
     {
         private readonly AppDbContext _dbContext;
         [BindProperty]
         public ToDoTable Table { get; set; }
-
-        public EditModel(AppDbContext dbContext)
+        public DeleteModel(AppDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -19,11 +18,13 @@ namespace ToDoWebApp.Pages
             Table = _dbContext.ToDoTable.Find(id);
         }
 
-        public async Task<IActionResult> OnPost(int id)
+        public async Task<IActionResult> OnPost()
         {
-            if (ModelState.IsValid)
+            var tableFromDb = _dbContext.ToDoTable.Find(Table.Id);
+
+            if (tableFromDb is not null)
             {
-                _dbContext.ToDoTable.Update(Table);
+                _dbContext.Remove(tableFromDb);
                 await _dbContext.SaveChangesAsync();
 
                 return RedirectToPage("Index");

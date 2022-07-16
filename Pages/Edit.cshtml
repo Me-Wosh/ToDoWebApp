@@ -5,5 +5,34 @@
 }
 
 <form method="post" class="main">
-	
+	<input hidden asp-for="Table.Id" />
+	<h3>Edit ToDo</h3>
+	<hr />
+
+	<div>
+		<h4><label asp-for="Table.Name"></label></h4>
+		<input asp-for="Table.Name" />
+		<span asp-validation-for="Table.Name" class="text-danger"></span>
+	</div>
+
+	<div>
+		<h4><label asp-for="Table.Details"></label></h4>
+		<input asp-for="Table.Details" />
+		<span asp-validation-for="Table.Details" class="text-danger"></span>
+	</div>
+
+	<div>
+		<h4><label asp-for="Table.ImportanceLevel"></label></h4>
+		<input asp-for="Table.ImportanceLevel" />
+		<span asp-validation-for="Table.ImportanceLevel" class="text-danger"></span>
+	</div>
+	<hr />
+
+	<button type="submit" class="btn btn-primary">Edit</button>
+	<a asp-page="Index" class="btn btn-primary">Return</a>
 </form>
+
+@section Scripts
+{
+	<partial name="_ValidationScriptsPartial" />
+}

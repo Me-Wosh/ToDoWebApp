@@ -8,7 +8,7 @@ namespace ToDoWebApp.Pages
     {
         private readonly AppDbContext _dbContext;
         [BindProperty]
-        public ToDoTable table { get; set; }
+        public ToDoTable Table { get; set; }
 
         public CreateModel(AppDbContext dbContext)
         {
@@ -23,7 +23,7 @@ namespace ToDoWebApp.Pages
         {
             if (ModelState.IsValid)
             {
-                await _dbContext.ToDoTable.AddAsync(table);
+                await _dbContext.ToDoTable.AddAsync(Table);
                 await _dbContext.SaveChangesAsync();
                 return RedirectToPage("Index");
             }

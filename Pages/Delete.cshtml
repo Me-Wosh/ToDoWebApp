@@ -1,0 +1,30 @@
+﻿@page
+@model ToDoWebApp.Pages.DeleteModel
+@{
+	ViewData["Title"] = "Delete ToDo";
+}
+
+<form method="post" class="main">
+	<input hidden asp-for="Table.Id" />
+	<h3>Delete ToDo</h3>
+	<hr />
+
+	<div>
+		<h4><label asp-for="Table.Name"></label></h4>
+		<input disabled asp-for="Table.Name" />
+	</div>
+
+	<div>
+		<h4><label asp-for="Table.Details"></label></h4>
+		<input disabled asp-for="Table.Details" />
+	</div>
+
+	<div>
+		<h4><label asp-for="Table.ImportanceLevel"></label></h4>
+		<input disabled asp-for="Table.ImportanceLevel" />
+	</div>
+	<hr />
+
+	<button type="submit" class="btn btn-danger">Delete</button>
+	<a asp-page="Index" class="btn btn-primary">Return</a>
+</form>
