@@ -1,0 +1,37 @@
+﻿@page
+@model ToDoWebApp.Pages.CreateModel
+@{
+	ViewData["Title"] = "Create ToDo";
+}
+
+<form method="post" class="main">
+	<h3>Create new ToDo</h3>
+	<hr />
+
+	<div>
+		<h4><label asp-for="table.Name"></label></h4>
+		<input asp-for="table.Name" />
+		<span asp-validation-for="table.Name" class="text-danger"></span>
+	</div>
+
+	<div>
+		<h4><label asp-for="table.Details"></label></h4>
+		<input asp-for="table.Details" />
+		<span asp-validation-for="table.Details" class="text-danger"></span>
+	</div>
+
+	<div>
+		<h4><label asp-for="table.ImportanceLevel"></label></h4>
+		<input asp-for="table.ImportanceLevel" />
+		<span asp-validation-for="table.ImportanceLevel" class="text-danger"></span>
+	</div>
+	<hr />
+
+	<button type="submit" class="btn btn-primary">Create</button>
+	<a asp-page="Index" class="btn btn-primary">Return</a>
+</form>
+
+@section Scripts
+{
+	<partial name="_ValidationScriptsPartial" />
+}

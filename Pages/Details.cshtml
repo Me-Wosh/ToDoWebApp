@@ -1,0 +1,22 @@
+﻿@page
+@model ToDoWebApp.Pages.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="main">
+    <h4>Name</h4>
+    <p>@Html.ValueFor(model => model.table.Name)</p>
+    <hr />
+    @if (Model.table.Details is not null)
+    {
+        <h4>Description</h4>
+        <p>@Html.ValueFor(model => model.table.Details)</p>
+        <hr />
+    }
+    <h4>Importance Level</h4>
+    <p>@Html.ValueFor(model => model.table.ImportanceLevel)</p>
+    <hr />
+    <a asp-page="Edit" class="btn btn-primary">Edit</a>
+    <a asp-page="Index" class="btn btn-primary">Return</a>
+</div>

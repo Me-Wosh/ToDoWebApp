@@ -10,5 +10,18 @@ namespace ToDoWebApp.Entities
         }
 
         public DbSet<ToDoTable> ToDoTable { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ToDoTable>().HasData(
+                new ToDoTable
+                {
+                    Id = 1,
+                    Name = "Enjoying the App",
+                    Details = "Simple as that!",
+                    ImportanceLevel = 1
+                }
+            );
+        }
     }
 }

@@ -16,3 +16,36 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.index, .main {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 500px) {
+    .index, .main {
+        max-width: 95%;
+    }
+}
+
+table {
+    min-width: 100%;
+}
+
+table, tr, th, td {
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+}
+
+th, td {
+    width: 33%;
+}
+
+.main {
+    border: 1px solid black;
+    padding: 2%;
+}
