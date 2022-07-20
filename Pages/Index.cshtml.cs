@@ -18,7 +18,7 @@ namespace ToDoWebApp.Pages
 
         public void OnGet()
         {
-            ToDoElements = _dbContext.ToDoTable;
+            ToDoElements = _dbContext.ToDoTable.OrderBy(x => x.ImportanceLevel);
         }
     }
 }
